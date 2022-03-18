@@ -37,7 +37,6 @@ public class Respuesta {
         sb.append("Respuesta{");
         sb.append("").append(caracter);
         sb.append(". ").append(respuesta);
-        sb.append(", acierto=").append(acierto);
         sb.append('}');
         return sb.toString();
     }
