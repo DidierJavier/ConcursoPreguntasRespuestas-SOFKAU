@@ -35,8 +35,8 @@ public class Respuesta {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Respuesta{");
-        sb.append("respuesta=").append(respuesta);
-        sb.append(", caracter=").append(caracter);
+        sb.append("").append(caracter);
+        sb.append(". ").append(respuesta);
         sb.append(", acierto=").append(acierto);
         sb.append('}');
         return sb.toString();
