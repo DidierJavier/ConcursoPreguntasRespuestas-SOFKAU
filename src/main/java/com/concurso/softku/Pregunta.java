@@ -4,19 +4,22 @@
  */
 package com.concurso.softku;
 
+import java.util.*;
+
 /**
  *
  * @author DIDIER JAVIER
  */
 public class Pregunta {
     private String pregunta;
-    private Respuesta posiblesRespuestas[];
+    //private Respuesta posiblesRespuestas[];
+    private ArrayList<Respuesta> posiblesRespuestas;
     private static final int MAX_POSIBLES_RESPUESTAS = 4;
-    private int contadorRespuestas;
+    private Integer contadorRespuestas = 0;
 
     public Pregunta(String pregunta) {
         this.pregunta = pregunta;
-        this.posiblesRespuestas = new Respuesta[Pregunta.MAX_POSIBLES_RESPUESTAS];
+        this.posiblesRespuestas = new ArrayList<>();
     }
 
     public void agregarRespuesta(Respuesta respuesta) {
@@ -24,25 +27,25 @@ public class Pregunta {
             System.out.println("No se pueden agregar mas respuestas");
             System.out.println("La cantidad máxima de respuestas es: " + Pregunta.MAX_POSIBLES_RESPUESTAS);
         } else {
-            this.posiblesRespuestas [this.contadorRespuestas ++] = respuesta;            
+            //this.posiblesRespuestas [this.contadorRespuestas ++] = respuesta;
+            this.contadorRespuestas++;
+            this.posiblesRespuestas.add(respuesta);
         }
         
     }
 
     @Override
     public String toString() {
-        return "Pregunta{" + "pregunta=" + pregunta + ", posiblesRespuestas=" + posiblesRespuestas +
-                ", contadorRespuestas=" + contadorRespuestas + '}';
-    }   
+        return "Pregunta:\n" + pregunta + "\n" + this.posiblesRespuestas;
+    }       
     
-    
-    public void mostrarPregunta() {
-        System.out.println("\nPregunta: " + this.pregunta);
-        System.out.println();
-        for (int i = 0; i < this.contadorRespuestas; i++) {
-            System.out.println(this.posiblesRespuestas[i]);
-        }
-        //System.out.println("\ttotal de la orden: " + calcularTotal() + "\n");
-    }   
+//    public void mostrarPregunta() {
+//        System.out.println("\nPregunta: " + this.pregunta);
+//        System.out.println();
+//        for (int i = 0; i < this.contadorRespuestas; i++) {
+//            System.out.println(this.posiblesRespuestas.get(i));
+//        }
+//        //System.out.println("\ttotal de la orden: " + calcularTotal() + "\n");
+//    }   
     
 }

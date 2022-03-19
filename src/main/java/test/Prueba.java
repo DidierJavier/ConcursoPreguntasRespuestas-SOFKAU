@@ -389,8 +389,12 @@ public class Prueba {
 
     
     System.out.println(pregunta1_ronda1);
-    pregunta5_ronda5.mostrarPregunta();
+    //pregunta5_ronda5.mostrarPregunta();
     categoria1.mostrarPreguntasPorCategoria();
+    categoria2.mostrarPreguntasPorCategoria();
+    categoria3.mostrarPreguntasPorCategoria();
+    categoria4.mostrarPreguntasPorCategoria();
+    categoria5.mostrarPreguntasPorCategoria();
 //    pregunta2_ronda2.mostrarPregunta();
 //    pregunta3_ronda2.mostrarPregunta();
 //    pregunta4_ronda2.mostrarPregunta();

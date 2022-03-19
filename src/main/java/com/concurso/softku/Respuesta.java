@@ -31,15 +31,32 @@ public class Respuesta {
         return acierto;
     }
 
+//    @Override
+//    public String toString() {
+//        StringBuilder sb = new StringBuilder();
+//        sb.append("").append(caracter);
+//        sb.append(". ").sb.append("\n").append(respuesta);
+//        sb.append('}');
+//        return sb.toString();
+//    }
+
+//    @Override
+//    public String toString() {
+//        return "\n" + this.caracter + ". " + this.respuesta;
+//    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Respuesta{");
-        sb.append("").append(caracter);
+        //sb.append("");
+        sb.append("\n").append(caracter);
         sb.append(". ").append(respuesta);
-        sb.append('}');
+        //sb.append(", acierto=").append(acierto);
+        //sb.append('}');
         return sb.toString();
     }
+    
+    
     
     
 }

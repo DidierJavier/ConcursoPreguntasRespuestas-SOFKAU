@@ -15,10 +15,12 @@ public class Categoria {
     private Pregunta posiblesPreguntas[];
     private static final int MAX_POSIBLES_PREGUNTAS = 5;
     private int contadorPreguntas;
+    private static int idCategoria;
     
     public Categoria() {    
         this.categoria = categoria;
         this.posiblesPreguntas = new Pregunta[Categoria.MAX_POSIBLES_PREGUNTAS];
+        this.idCategoria = idCategoria;
     }
 
     public String getCategoria() {
@@ -43,12 +45,14 @@ public class Categoria {
         
     }
     public void mostrarPreguntasPorCategoria() {
-        System.out.println("\n:Categoria ");
+        System.out.println("\nCategoria " + ++Categoria.idCategoria);
         System.out.println();
-        for (int i = 0; i < this.contadorPreguntas; i++) {
-            //System.out.println("\n: " + (i + 1));
-            System.out.println(this.posiblesPreguntas[i].toString());
-        }
-        //System.out.println("\ttotal de la orden: " + calcularTotal() + "\n");
+//        for (int i = 0; i < this.contadorPreguntas; i++) {
+//            //System.out.println("\n: " + (i + 1));
+//            System.out.println(this.posiblesPreguntas[i].toString());
+//        }
+        Random random = new Random();
+        System.out.println(this.posiblesPreguntas[random.nextInt(Categoria.MAX_POSIBLES_PREGUNTAS)]);
+        
     }   
 }
