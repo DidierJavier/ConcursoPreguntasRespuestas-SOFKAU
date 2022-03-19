@@ -21,26 +21,28 @@ public class UIMenu {
         System.out.println("Te puedes retirar cuando quieras y quedas con los puntos acumulados");
         System.out.println("Si continuas y pierdes, tambien pierdes todos los puntos\n");
         System.out.println("Selecciona una opcion valida");
-        int respuesta = 0;
+        String respuesta = "0";
         do {
             System.out.println("1. Empezar");
             System.out.println("0. Salir");
 
-            Scanner sc = new Scanner(System.in);
-            respuesta = Integer.parseInt(sc.nextLine());
+            Scanner sc = new Scanner(System.in);            
+            respuesta = sc.nextLine();
 
             switch (respuesta) {
-                case 1:
-                    respuesta = 0;
+                case "1":
+                    respuesta = "0";
                     ingresarUsuario();
                     break;
-                case 0:
+                case "0":
                     System.out.println("Hasta la proxima ocasion");
+                    salir();
+                    System.exit(0);
                     break;
                 default:
                     System.out.println("Selecciona una opcion valida");
             }
-        } while (respuesta != 0);
+        } while (!"0".equals(respuesta));
     }
 
     private static void ingresarUsuario() {
@@ -61,25 +63,31 @@ public class UIMenu {
             System.out.println("Digite otra letra si desea retirarse");
             Scanner sc = new Scanner(System.in);
             respuesta = sc.nextLine().toUpperCase();
-
             switch (respuesta) {
                 case "A": 
                 case "B":
                 case "C": 
                 case "D":
+                    String opcionValida = respuesta;
                     respuesta = "E";
-                    //verMenu();
+                    validarRespuesta(opcionValida);
                     break;
                 default:
                     respuesta = "E";
                     System.out.println("\nHasta la proxima ocasion\n");
                     salir();
+                    System.exit(0);
                     break;
             }
-        } while (respuesta != "E");
+        } while (respuesta.equals("E"));
+    }
+    
+    public static void validarRespuesta(String opcionValida) {
+        
     }
     
     public static void salir() {
         System.out.println("Fin del juego");
     }
+    
 }

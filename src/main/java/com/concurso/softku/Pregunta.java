@@ -39,13 +39,4 @@ public class Pregunta {
         return "Pregunta:\n" + pregunta + "\n" + this.posiblesRespuestas;
     }       
     
-//    public void mostrarPregunta() {
-//        System.out.println("\nPregunta: " + this.pregunta);
-//        System.out.println();
-//        for (int i = 0; i < this.contadorRespuestas; i++) {
-//            System.out.println(this.posiblesRespuestas.get(i));
-//        }
-//        //System.out.println("\ttotal de la orden: " + calcularTotal() + "\n");
-//    }   
-    
 }

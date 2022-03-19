@@ -12,14 +12,15 @@ import java.util.*;
  */
 public class Categoria {
     private String categoria;
-    private Pregunta posiblesPreguntas[];
+    //private Pregunta posiblesPreguntas[];
+    ArrayList<Pregunta> posiblesPreguntas;
     private static final int MAX_POSIBLES_PREGUNTAS = 5;
     private int contadorPreguntas;
     private static int idCategoria;
     
     public Categoria() {    
         this.categoria = categoria;
-        this.posiblesPreguntas = new Pregunta[Categoria.MAX_POSIBLES_PREGUNTAS];
+        this.posiblesPreguntas = new ArrayList<>();
         this.idCategoria = idCategoria;
     }
 
@@ -27,9 +28,10 @@ public class Categoria {
         return categoria;
     }
 
-    public Pregunta[] getPosiblesPreguntas() {
+    public ArrayList<Pregunta> getPosiblesPreguntas() {
         return posiblesPreguntas;
     }
+    
 
     public int getContadorPreguntas() {
         return contadorPreguntas;
@@ -40,19 +42,18 @@ public class Categoria {
             System.out.println("No se pueden agregar mas preguntas");
             System.out.println("La cantidad máxima de preguntas es: " + Categoria.MAX_POSIBLES_PREGUNTAS);
         } else {
-            this.posiblesPreguntas [this.contadorPreguntas ++] = pregunta;            
+            this.contadorPreguntas ++;
+            this.posiblesPreguntas.add(pregunta);            
         }
         
     }
-    public void mostrarPreguntasPorCategoria() {
+    public int mostrarPreguntasPorCategoria() {
         System.out.println("\nCategoria " + ++Categoria.idCategoria);
         System.out.println();
-//        for (int i = 0; i < this.contadorPreguntas; i++) {
-//            //System.out.println("\n: " + (i + 1));
-//            System.out.println(this.posiblesPreguntas[i].toString());
-//        }
         Random random = new Random();
-        System.out.println(this.posiblesPreguntas[random.nextInt(Categoria.MAX_POSIBLES_PREGUNTAS)]);
-        
+        int aleatorio = random.nextInt(Categoria.MAX_POSIBLES_PREGUNTAS);
+        //System.out.println(this.posiblesPreguntas.get(aleatorio));
+        //System.out.println("Aleatorio: " + aleatorio);
+        return aleatorio;
     }   
 }

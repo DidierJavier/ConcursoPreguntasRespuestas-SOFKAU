@@ -396,7 +396,13 @@ public class Prueba {
 //    categoria4.mostrarPreguntasPorCategoria();
 //    categoria5.mostrarPreguntasPorCategoria();
     verMenu();
-    categoria1.mostrarPreguntasPorCategoria();
-    continuar();
+    //if()
+    int idPreguntaAleatoria = categoria1.mostrarPreguntasPorCategoria();
+        System.out.println(categoria1.getPosiblesPreguntas().get(idPreguntaAleatoria));
+        
+    //int capturaPreguntaCategoria
+    //continuar();
+    
+    //categoria1.
     }
 }
