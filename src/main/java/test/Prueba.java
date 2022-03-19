@@ -5,6 +5,7 @@
 package test;
 
 import com.concurso.softku.*;
+import static ui.UIMenu.*;
 
 /**
  *
@@ -386,18 +387,16 @@ public class Prueba {
     categoria5.agregarPregunta(pregunta3_ronda5);
     categoria5.agregarPregunta(pregunta4_ronda5);
     categoria5.agregarPregunta(pregunta5_ronda5);
-
     
-    System.out.println(pregunta1_ronda1);
-    //pregunta5_ronda5.mostrarPregunta();
+//    System.out.println(pregunta1_ronda1);
+//    //pregunta5_ronda5.mostrarPregunta();
+//    categoria1.mostrarPreguntasPorCategoria();
+//    categoria2.mostrarPreguntasPorCategoria();
+//    categoria3.mostrarPreguntasPorCategoria();
+//    categoria4.mostrarPreguntasPorCategoria();
+//    categoria5.mostrarPreguntasPorCategoria();
+    verMenu();
     categoria1.mostrarPreguntasPorCategoria();
-    categoria2.mostrarPreguntasPorCategoria();
-    categoria3.mostrarPreguntasPorCategoria();
-    categoria4.mostrarPreguntasPorCategoria();
-    categoria5.mostrarPreguntasPorCategoria();
-//    pregunta2_ronda2.mostrarPregunta();
-//    pregunta3_ronda2.mostrarPregunta();
-//    pregunta4_ronda2.mostrarPregunta();
-//    pregunta5_ronda2.mostrarPregunta();
+    continuar();
     }
 }
