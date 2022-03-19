@@ -11,24 +11,13 @@ package com.concurso.softku;
 public class Pregunta {
     private String pregunta;
     private Respuesta posiblesRespuestas[];
-    private static final int MAX_POSIBLES_RESPUESTAS = 100;
+    private static final int MAX_POSIBLES_RESPUESTAS = 4;
     private int contadorRespuestas;
 
     public Pregunta(String pregunta) {
         this.pregunta = pregunta;
         this.posiblesRespuestas = new Respuesta[Pregunta.MAX_POSIBLES_RESPUESTAS];
     }
-
-//    @Override
-//    public String toString() {
-//        StringBuilder sb = new StringBuilder();
-//        sb.append("Pregunta{");
-//        sb.append("pregunta=").append(pregunta);
-//        sb.append(", posiblesRespuestas=").append(posiblesRespuestas);
-//        sb.append(", contadorRespuestas=").append(contadorRespuestas);
-//        sb.append('}');
-//        return sb.toString();
-//    }
 
     public void agregarRespuesta(Respuesta respuesta) {
         if (this.contadorRespuestas >= Pregunta.MAX_POSIBLES_RESPUESTAS){
@@ -39,6 +28,13 @@ public class Pregunta {
         }
         
     }
+
+    @Override
+    public String toString() {
+        return "Pregunta{" + "pregunta=" + pregunta + ", posiblesRespuestas=" + posiblesRespuestas +
+                ", contadorRespuestas=" + contadorRespuestas + '}';
+    }   
+    
     
     public void mostrarPregunta() {
         System.out.println("\nPregunta: " + this.pregunta);

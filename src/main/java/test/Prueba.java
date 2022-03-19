@@ -78,6 +78,15 @@ public class Prueba {
     pregunta5_ronda1.agregarRespuesta(respuestaC_Pregunta5_Ronda1);
     pregunta5_ronda1.agregarRespuesta(respuestaD_Pregunta5_Ronda1);
     
+    //Creando la categoria 1 
+    Categoria categoria1 = new Categoria();
+    //Agregando las preguntas a la categoria 1
+    categoria1.agregarPregunta(pregunta1_ronda1);
+    categoria1.agregarPregunta(pregunta2_ronda1);
+    categoria1.agregarPregunta(pregunta3_ronda1);
+    categoria1.agregarPregunta(pregunta4_ronda1);
+    categoria1.agregarPregunta(pregunta5_ronda1);
+    
     //Ronda 2--------------------------------------------------------------------------------------------
     //Creando respuestas pregunta 1 ronda 2--------------------------------------------------------------
     Respuesta respuestaA_Pregunta1_Ronda2 = new Respuesta("86.400", 'A' , true);
@@ -143,6 +152,15 @@ public class Prueba {
     pregunta5_ronda2.agregarRespuesta(respuestaB_Pregunta5_Ronda2);
     pregunta5_ronda2.agregarRespuesta(respuestaC_Pregunta5_Ronda2);
     pregunta5_ronda2.agregarRespuesta(respuestaD_Pregunta5_Ronda2);
+    
+    //Creando la categoria 2 
+    Categoria categoria2 = new Categoria();
+    //Agregando las preguntas a la categoria 1
+    categoria2.agregarPregunta(pregunta1_ronda2);
+    categoria2.agregarPregunta(pregunta2_ronda2);
+    categoria2.agregarPregunta(pregunta3_ronda2);
+    categoria2.agregarPregunta(pregunta4_ronda2);
+    categoria2.agregarPregunta(pregunta5_ronda2);
     
     //Ronda 3----------------------------------------------------------------------------------------
     //Creando las respuestas ronda 3 pregunta 1---------------------------------------------------------------
@@ -210,6 +228,15 @@ public class Prueba {
     pregunta5_ronda3.agregarRespuesta(respuestaC_Pregunta5_Ronda3);
     pregunta5_ronda3.agregarRespuesta(respuestaD_Pregunta5_Ronda3);
     
+    //Creando la categoria 3 
+    Categoria categoria3 = new Categoria();
+    //Agregando las preguntas a la categoria 1
+    categoria3.agregarPregunta(pregunta1_ronda3);
+    categoria3.agregarPregunta(pregunta2_ronda3);
+    categoria3.agregarPregunta(pregunta3_ronda3);
+    categoria3.agregarPregunta(pregunta4_ronda3);
+    categoria3.agregarPregunta(pregunta5_ronda3);
+    
     //Ronda 4--------------------------------------------------------------------------------------
     //Creando respuestas para la pregunta 1 ronda 4-----------------------------------------------------------------------
     Respuesta respuestaA_Pregunta1_Ronda4 = new Respuesta("Dinamarca", 'A' , true);
@@ -276,6 +303,15 @@ public class Prueba {
     pregunta5_ronda4.agregarRespuesta(respuestaC_Pregunta5_Ronda4);
     pregunta5_ronda4.agregarRespuesta(respuestaD_Pregunta5_Ronda4);
     
+    //Creando la categoria 4
+    Categoria categoria4 = new Categoria();
+    //Agregando las preguntas a la categoria 1
+    categoria4.agregarPregunta(pregunta1_ronda4);
+    categoria4.agregarPregunta(pregunta2_ronda4);
+    categoria4.agregarPregunta(pregunta3_ronda4);
+    categoria4.agregarPregunta(pregunta4_ronda4);
+    categoria4.agregarPregunta(pregunta5_ronda4);
+    
     //Ronda 5---------------------------------------------------------------------------------
     //Creando respuestas pregunta 1 ronda 5-----------------------------------------------------------------------
     Respuesta respuestaA_Pregunta1_Ronda5 = new Respuesta("Sirio", 'A' , false);
@@ -341,10 +377,20 @@ public class Prueba {
     pregunta5_ronda5.agregarRespuesta(respuestaB_Pregunta5_Ronda5);
     pregunta5_ronda5.agregarRespuesta(respuestaC_Pregunta5_Ronda5);
     pregunta5_ronda5.agregarRespuesta(respuestaD_Pregunta5_Ronda5);
+    
+    //Creando la categoria 5 
+    Categoria categoria5 = new Categoria();
+    //Agregando las preguntas a la categoria 1
+    categoria5.agregarPregunta(pregunta1_ronda5);
+    categoria5.agregarPregunta(pregunta2_ronda5);
+    categoria5.agregarPregunta(pregunta3_ronda5);
+    categoria5.agregarPregunta(pregunta4_ronda5);
+    categoria5.agregarPregunta(pregunta5_ronda5);
 
     
-      //System.out.println(pregunta1_orden1);
+    System.out.println(pregunta1_ronda1);
     pregunta5_ronda5.mostrarPregunta();
+    categoria1.mostrarPreguntasPorCategoria();
 //    pregunta2_ronda2.mostrarPregunta();
 //    pregunta3_ronda2.mostrarPregunta();
 //    pregunta4_ronda2.mostrarPregunta();
