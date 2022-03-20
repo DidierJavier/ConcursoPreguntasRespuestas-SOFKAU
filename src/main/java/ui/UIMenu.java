@@ -4,7 +4,10 @@
  */
 package ui;
 
+import com.concurso.sofkau.Categoria;
+import com.concurso.sofkau.Pregunta;
 import com.concurso.sofkau.Usuario;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -23,17 +26,17 @@ public class UIMenu {
         String respuesta = "0";
         do {
             System.out.println("1. Empezar");
-            System.out.println("0. Salir");
+            System.out.println("2. Salir");
 
             Scanner sc = new Scanner(System.in);            
             respuesta = sc.nextLine();
 
             switch (respuesta) {
                 case "1":
-                    respuesta = "0";
+                    respuesta = "1";
                     ingresarUsuario();
                     break;
-                case "0":
+                case "2":
                     System.out.println("Hasta la proxima ocasion");
                     salir();
                     System.exit(0);
@@ -41,7 +44,7 @@ public class UIMenu {
                 default:
                     System.out.println("Selecciona una opcion valida");
             }
-        } while (!"0".equals(respuesta));
+        } while (!"1".equals(respuesta));
     }
 
     private static void ingresarUsuario() {
@@ -79,6 +82,44 @@ public class UIMenu {
         } while (!respuesta.equals("E"));
         return opcionValida;
         
+    }
+    
+   // public static void verificarEleccion(Categoria categoriaDeLista) {
+    public static void verificarEleccion(ArrayList<Categoria> categorias) {
+    
+      for (int i = 0; i < 5; i++) {
+            Categoria categoriaDeLista = categorias.get(i);
+            System.out.println("Tipo de categoria= " + categoriaDeLista);
+
+            int idPreguntaAleatoria = categoriaDeLista.mostrarPreguntasPorCategoria();
+            System.out.println("Este es el id de categoría1: " + categoriaDeLista.getIdCategoria());
+            System.out.println(categoriaDeLista.getPosiblesPreguntas().get(idPreguntaAleatoria));
+            Pregunta guardarPregunta = categoriaDeLista.getPosiblesPreguntas().get(idPreguntaAleatoria);
+
+            String opcionValida = continuar();
+            System.out.println("opcionValida = " + opcionValida);
+            int j = 0;
+            switch (opcionValida) {
+                case "A" ->
+                    j = 0;
+                case "B" ->
+                    j = 1;
+                case "C" ->
+                    j = 2;
+                case "D" ->
+                    j = 3;
+            }
+
+            System.out.println("Cierto o falso = " + guardarPregunta.getPosiblesRespuestas().get(j).getAcierto());
+            if (guardarPregunta.getPosiblesRespuestas().get(j).getAcierto() && i < 4) {
+                System.out.println("Felicidades: Pasas a la siguiente ronda");
+            }else if (guardarPregunta.getPosiblesRespuestas().get(j).getAcierto() && i == 4) {
+                System.out.println("Haz ganado");
+            }else {
+                salir();
+            }
+
+        }
     }
     
     
