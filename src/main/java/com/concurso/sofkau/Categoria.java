@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.concurso.softku;
+package com.concurso.sofkau;
 
 import java.util.*;
 
@@ -52,8 +52,6 @@ public class Categoria {
         System.out.println();
         Random random = new Random();
         int aleatorio = random.nextInt(Categoria.MAX_POSIBLES_PREGUNTAS);
-        //System.out.println(this.posiblesPreguntas.get(aleatorio));
-        //System.out.println("Aleatorio: " + aleatorio);
         return aleatorio;
     }   
 }

@@ -4,8 +4,7 @@
  */
 package ui;
 
-import com.concurso.softku.Usuario;
-import java.util.ArrayList;
+import com.concurso.sofkau.Usuario;
 import java.util.Scanner;
 
 /**
@@ -56,35 +55,31 @@ public class UIMenu {
         } while (nombreLengthSinEspacios < 7);
     }
 
-    public static void continuar() {
-        String respuesta = "E";
+    public static String continuar() {
+        String opcionValida = null;
+        String respuesta;
         do {
             System.out.println("Digite la letra de la respuesta que considera correcta (A, B, C, D)");
             System.out.println("Digite otra letra si desea retirarse");
             Scanner sc = new Scanner(System.in);
             respuesta = sc.nextLine().toUpperCase();
             switch (respuesta) {
-                case "A": 
-                case "B":
-                case "C": 
-                case "D":
-                    String opcionValida = respuesta;
+                case "A", "B", "C", "D" -> {
+                    opcionValida = respuesta;
+                    //validarRespuesta();
                     respuesta = "E";
-                    validarRespuesta(opcionValida);
-                    break;
-                default:
-                    respuesta = "E";
-                    System.out.println("\nHasta la proxima ocasion\n");
-                    salir();
-                    System.exit(0);
-                    break;
+                }
+                default -> {
+                        //respuesta = "E";
+                        System.out.println("\nHasta la proxima ocasion\n");
+                        salir();
+                        System.exit(0);
+                }
             }
-        } while (respuesta.equals("E"));
+        } while (!respuesta.equals("E"));
+        return opcionValida;
     }
     
-    public static void validarRespuesta(String opcionValida) {
-        
-    }
     
     public static void salir() {
         System.out.println("Fin del juego");

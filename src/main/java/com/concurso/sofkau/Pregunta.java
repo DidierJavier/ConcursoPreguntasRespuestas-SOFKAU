@@ -2,9 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.concurso.softku;
+package com.concurso.sofkau;
 
 import java.util.*;
+import ui.UIMenu;
 
 /**
  *
@@ -21,6 +22,32 @@ public class Pregunta {
         this.pregunta = pregunta;
         this.posiblesRespuestas = new ArrayList<>();
     }
+
+    public String getPregunta() {
+        return pregunta;
+    }
+
+    public void setPregunta(String pregunta) {
+        this.pregunta = pregunta;
+    }
+
+    public ArrayList<Respuesta> getPosiblesRespuestas() {
+        return posiblesRespuestas;
+    }
+
+    public void setPosiblesRespuestas(ArrayList<Respuesta> posiblesRespuestas) {
+        this.posiblesRespuestas = posiblesRespuestas;
+    }
+
+    public Integer getContadorRespuestas() {
+        return contadorRespuestas;
+    }
+
+    public void setContadorRespuestas(Integer contadorRespuestas) {
+        this.contadorRespuestas = contadorRespuestas;
+    }
+    
+    
 
     public void agregarRespuesta(Respuesta respuesta) {
         if (this.contadorRespuestas >= Pregunta.MAX_POSIBLES_RESPUESTAS){
