@@ -5,6 +5,7 @@
 package test;
 
 import com.concurso.sofkau.*;
+import java.util.ArrayList;
 import static ui.UIMenu.*;
 
 /**
@@ -389,38 +390,72 @@ public class Prueba {
         categoria5.agregarPregunta(pregunta4_ronda5);
         categoria5.agregarPregunta(pregunta5_ronda5);
 
-//    System.out.println(pregunta1_ronda1);
-//    //pregunta5_ronda5.mostrarPregunta();
-//    categoria1.mostrarPreguntasPorCategoria();
-//    categoria2.mostrarPreguntasPorCategoria();
-//    categoria3.mostrarPreguntasPorCategoria();
-//    categoria4.mostrarPreguntasPorCategoria();
-//    categoria5.mostrarPreguntasPorCategoria();
         verMenu();
-
-        int idPreguntaAleatoria = categoria1.mostrarPreguntasPorCategoria();
-        System.out.println(categoria1.getPosiblesPreguntas().get(idPreguntaAleatoria));
-        Pregunta guardarPregunta = categoria1.getPosiblesPreguntas().get(idPreguntaAleatoria);
-        //respuestaA_Pregunta1_Ronda1.getAcierto();
-
-        String opcionValida = continuar();
+        
+        ArrayList<Categoria> categorias = new ArrayList();
+        categorias.add(categoria1);
+        categorias.add(categoria2);
+        categorias.add(categoria3);
+        categorias.add(categoria4);
+        categorias.add(categoria5);
+        
+        for (int i = 0; i < categorias.size(); i++) {
+            Categoria categoriaDeLista = categorias.get(i);
+            System.out.println("Tipo de categoria= " + categoriaDeLista);
+        
+            int idPreguntaAleatoria = categoriaDeLista.mostrarPreguntasPorCategoria();
+            System.out.println("Este es el id de categoría1: " + categoriaDeLista.getIdCategoria());
+            System.out.println(categoriaDeLista.getPosiblesPreguntas().get(idPreguntaAleatoria));
+            Pregunta guardarPregunta = categoriaDeLista.getPosiblesPreguntas().get(idPreguntaAleatoria);
+        
+                 String opcionValida = continuar();
         System.out.println("opcionValida = " + opcionValida);
-        int i = 0;
+        int j = 0;
         switch (opcionValida) {
             case "A" ->
-                i = 0;
+                j = 0;
             case "B" ->
-                i = 1;
+                j = 1;
             case "C" ->
-                i = 2;
+                j = 2;
             case "D" ->
-                i = 3;
+                j = 3;
         }
 
-        System.out.println("guardarPregunta = " + guardarPregunta.getPosiblesRespuestas().get(i).getAcierto());
-        if(guardarPregunta.getPosiblesRespuestas().get(i).getAcierto()) {
+        System.out.println("guardarPregunta = " + guardarPregunta.getPosiblesRespuestas().get(j).getAcierto());
+        if(guardarPregunta.getPosiblesRespuestas().get(j).getAcierto()) {
             System.out.println("Felicidades");
+        }  
+        
         }
+
+        
+        
+        //int idPreguntaAleatoria = categoria1.mostrarPreguntasPorCategoria();
+        //categoria1.getIdCategoria();
+//        System.out.println("Este es el id de categoría1: " + categoria1.getIdCategoria());
+//        System.out.println(categoria1.getPosiblesPreguntas().get(idPreguntaAleatoria));
+//        Pregunta guardarPregunta = categoria1.getPosiblesPreguntas().get(idPreguntaAleatoria);
+        //respuestaA_Pregunta1_Ronda1.getAcierto();
+
+//        String opcionValida = continuar();
+//        System.out.println("opcionValida = " + opcionValida);
+//        int i = 0;
+//        switch (opcionValida) {
+//            case "A" ->
+//                i = 0;
+//            case "B" ->
+//                i = 1;
+//            case "C" ->
+//                i = 2;
+//            case "D" ->
+//                i = 3;
+//        }
+//
+//        System.out.println("guardarPregunta = " + guardarPregunta.getPosiblesRespuestas().get(i).getAcierto());
+//        if(guardarPregunta.getPosiblesRespuestas().get(i).getAcierto()) {
+//            System.out.println("Felicidades");
+//        }        
 
     }
 

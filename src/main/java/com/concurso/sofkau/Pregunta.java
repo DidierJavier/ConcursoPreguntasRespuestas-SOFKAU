@@ -22,6 +22,8 @@ public class Pregunta {
         this.pregunta = pregunta;
         this.posiblesRespuestas = new ArrayList<>();
     }
+    
+    
 
     public String getPregunta() {
         return pregunta;
