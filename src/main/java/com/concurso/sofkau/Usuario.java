@@ -14,6 +14,7 @@ public class Usuario {
     
     public Usuario(String nombre) {
         this.nombre = nombre;
+        Usuario.puntos = 1;
     }
 
     public static int getPuntos() {

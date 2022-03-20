@@ -15,8 +15,6 @@ import java.util.Scanner;
  * @author DIDIER JAVIER
  */
 public class UIMenu {
-    
-    
     public static void verMenu() {
         System.out.println("Bienvenido al concurso de preguntas y respuestas");
         System.out.println("El juego consta de cinco rondas; una pregunta en cada ronda");
@@ -28,7 +26,7 @@ public class UIMenu {
             System.out.println("1. Empezar");
             System.out.println("2. Salir");
 
-            Scanner sc = new Scanner(System.in);            
+            Scanner sc = new Scanner(System.in);
             respuesta = sc.nextLine();
 
             switch (respuesta) {
@@ -70,26 +68,28 @@ public class UIMenu {
             switch (respuesta) {
                 case "A", "B", "C", "D" -> {
                     opcionValida = respuesta;
-                    //validarRespuesta();
+                    
                     respuesta = "E";
                 }
                 default -> {
-                        //respuesta = "E";
-                        System.out.println("\nHasta la proxima ocasion\n");
-                        
-                        salir(Usuario.getPuntos());
-                        System.exit(0);
+                    //respuesta = "E";
+                    System.out.println("\nHasta la proxima ocasion\n");
+                    if (Usuario.getPuntos() == 1) {
+                            Usuario.setPuntos(0);
+                    }
+                    salir(Usuario.getPuntos());
+                    System.exit(0);
                 }
             }
         } while (!respuesta.equals("E"));
         return opcionValida;
-        
+
     }
-    
-   // public static void verificarEleccion(Categoria categoriaDeLista) {
+
+    // public static void verificarEleccion(Categoria categoriaDeLista) {
     public static void verificarEleccion(ArrayList<Categoria> categorias) {
-    
-      for (int i = 0; i < 5; i++) {
+
+        for (int i = 0; i < 5; i++) {
             Categoria categoriaDeLista = categorias.get(i);
             //System.out.println("Tipo de categoria= " + categoriaDeLista);
 
@@ -102,32 +102,38 @@ public class UIMenu {
             System.out.println("opcionValida = " + opcionValida);
             int j = 0;
             switch (opcionValida) {
-                case "A" ->  j = 0;
-                case "B" ->  j = 1;
-                case "C" ->  j = 2;
-                case "D" ->  j = 3;
+                case "A" ->
+                    j = 0;
+                case "B" ->
+                    j = 1;
+                case "C" ->
+                    j = 2;
+                case "D" ->
+                    j = 3;
             }
 
             System.out.println("Cierto o falso = " + guardarPregunta.getPosiblesRespuestas().get(j).getAcierto());
             if (guardarPregunta.getPosiblesRespuestas().get(j).getAcierto() && i < 4) {
                 System.out.println("Felicidades: Pasas a la siguiente ronda");
-                Usuario.setPuntos(Usuario.getPuntos()*10);
-            }else if (guardarPregunta.getPosiblesRespuestas().get(j).getAcierto() && i == 4){
+                Usuario.setPuntos(Usuario.getPuntos() * 10);
+                System.out.println("Puntos acumulados: " + Usuario.getPuntos());
+            } else if (guardarPregunta.getPosiblesRespuestas().get(j).getAcierto() && i == 4) {
                 System.out.println("Eres todo un campeon");
-                Usuario.setPuntos(Usuario.getPuntos()*10);
-            }else {    
+                Usuario.setPuntos(Usuario.getPuntos() * 10);
+                salir(Usuario.getPuntos());
+            } else {
                 System.out.println("Lo siento. Haz perdido");
+                Usuario.setPuntos(0);
                 salir(Usuario.getPuntos());
             }
 
         }
     }
-    
-    
+
     public static void salir(int puntos) {
-        System.out.println("puntos = " + puntos);
+        System.out.println("Quedaste con " + puntos + " puntos");
         System.out.println("Fin del juego");
         System.exit(0);
     }
-    
+
 }
