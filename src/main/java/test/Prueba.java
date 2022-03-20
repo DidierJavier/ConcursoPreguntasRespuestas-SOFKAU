@@ -371,9 +371,9 @@ public class Prueba {
 
         //Creando las respuestas para la pregunta 5 ronda 5
         Respuesta respuestaA_Pregunta5_Ronda5 = new Respuesta("Sur Africa", "A", false);
-        Respuesta respuestaB_Pregunta5_Ronda5 = new Respuesta("Mongolia", "B", true);
+        Respuesta respuestaB_Pregunta5_Ronda5 = new Respuesta("Mongolia", "B", false);
         Respuesta respuestaC_Pregunta5_Ronda5 = new Respuesta("China", "C", false);
-        Respuesta respuestaD_Pregunta5_Ronda5 = new Respuesta("Australia", "D", false);
+        Respuesta respuestaD_Pregunta5_Ronda5 = new Respuesta("Australia", "D", true);
         //Creando la pregunta 1 ronda 5
         Pregunta pregunta5_ronda5 = new Pregunta("¿Cual es el pais con mas camellos salvajes?");
         //Agregando las respuestas a la pregunta 1 ronda 5

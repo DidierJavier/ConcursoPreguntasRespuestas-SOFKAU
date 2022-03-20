@@ -38,7 +38,7 @@ public class UIMenu {
                     break;
                 case "2":
                     System.out.println("Hasta la proxima ocasion");
-                    salir();
+                    salir(Usuario.getPuntos());
                     System.exit(0);
                     break;
                 default:
@@ -66,6 +66,7 @@ public class UIMenu {
             System.out.println("Digite otra letra si desea retirarse");
             Scanner sc = new Scanner(System.in);
             respuesta = sc.nextLine().toUpperCase();
+            //int puntos = Usuario.getPuntos();
             switch (respuesta) {
                 case "A", "B", "C", "D" -> {
                     opcionValida = respuesta;
@@ -75,7 +76,8 @@ public class UIMenu {
                 default -> {
                         //respuesta = "E";
                         System.out.println("\nHasta la proxima ocasion\n");
-                        salir();
+                        
+                        salir(Usuario.getPuntos());
                         System.exit(0);
                 }
             }
@@ -89,7 +91,7 @@ public class UIMenu {
     
       for (int i = 0; i < 5; i++) {
             Categoria categoriaDeLista = categorias.get(i);
-            System.out.println("Tipo de categoria= " + categoriaDeLista);
+            //System.out.println("Tipo de categoria= " + categoriaDeLista);
 
             int idPreguntaAleatoria = categoriaDeLista.mostrarPreguntasPorCategoria();
             System.out.println("Este es el id de categoría1: " + categoriaDeLista.getIdCategoria());
@@ -100,31 +102,32 @@ public class UIMenu {
             System.out.println("opcionValida = " + opcionValida);
             int j = 0;
             switch (opcionValida) {
-                case "A" ->
-                    j = 0;
-                case "B" ->
-                    j = 1;
-                case "C" ->
-                    j = 2;
-                case "D" ->
-                    j = 3;
+                case "A" ->  j = 0;
+                case "B" ->  j = 1;
+                case "C" ->  j = 2;
+                case "D" ->  j = 3;
             }
 
             System.out.println("Cierto o falso = " + guardarPregunta.getPosiblesRespuestas().get(j).getAcierto());
             if (guardarPregunta.getPosiblesRespuestas().get(j).getAcierto() && i < 4) {
                 System.out.println("Felicidades: Pasas a la siguiente ronda");
-            }else if (guardarPregunta.getPosiblesRespuestas().get(j).getAcierto() && i == 4) {
-                System.out.println("Haz ganado");
-            }else {
-                salir();
+                Usuario.setPuntos(Usuario.getPuntos()*10);
+            }else if (guardarPregunta.getPosiblesRespuestas().get(j).getAcierto() && i == 4){
+                System.out.println("Eres todo un campeon");
+                Usuario.setPuntos(Usuario.getPuntos()*10);
+            }else {    
+                System.out.println("Lo siento. Haz perdido");
+                salir(Usuario.getPuntos());
             }
 
         }
     }
     
     
-    public static void salir() {
+    public static void salir(int puntos) {
+        System.out.println("puntos = " + puntos);
         System.out.println("Fin del juego");
+        System.exit(0);
     }
     
 }

@@ -10,9 +10,18 @@ package com.concurso.sofkau;
  */
 public class Usuario {
     private String nombre;
+    private static int puntos;
     
     public Usuario(String nombre) {
         this.nombre = nombre;
+    }
+
+    public static int getPuntos() {
+        return puntos;
+    }
+
+    public static void setPuntos(int puntos) {
+        Usuario.puntos = puntos;
     }
 
     public String getName() {
