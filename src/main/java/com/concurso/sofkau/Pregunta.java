@@ -5,15 +5,13 @@
 package com.concurso.sofkau;
 
 import java.util.*;
-import ui.UIMenu;
-
 /**
  *
  * @author DIDIER JAVIER
  */
 public class Pregunta {
+
     private String pregunta;
-    //private Respuesta posiblesRespuestas[];
     private ArrayList<Respuesta> posiblesRespuestas;
     private static final int MAX_POSIBLES_RESPUESTAS = 4;
     private Integer contadorRespuestas = 0;
@@ -22,8 +20,6 @@ public class Pregunta {
         this.pregunta = pregunta;
         this.posiblesRespuestas = new ArrayList<>();
     }
-    
-    
 
     public String getPregunta() {
         return pregunta;
@@ -48,24 +44,20 @@ public class Pregunta {
     public void setContadorRespuestas(Integer contadorRespuestas) {
         this.contadorRespuestas = contadorRespuestas;
     }
-    
-    
 
     public void agregarRespuesta(Respuesta respuesta) {
-        if (this.contadorRespuestas >= Pregunta.MAX_POSIBLES_RESPUESTAS){
-            System.out.println("No se pueden agregar mas respuestas");
-            System.out.println("La cantidad máxima de respuestas es: " + Pregunta.MAX_POSIBLES_RESPUESTAS);
+        if (this.contadorRespuestas >= Pregunta.MAX_POSIBLES_RESPUESTAS) {
+            System.out.println("");
         } else {
-            //this.posiblesRespuestas [this.contadorRespuestas ++] = respuesta;
             this.contadorRespuestas++;
             this.posiblesRespuestas.add(respuesta);
         }
-        
+
     }
 
     @Override
     public String toString() {
         return "Pregunta:\n" + pregunta + "\n" + this.posiblesRespuestas;
-    }       
-    
+    }
+
 }

@@ -4,9 +4,7 @@
  */
 package ui;
 
-import com.concurso.sofkau.Categoria;
-import com.concurso.sofkau.Pregunta;
-import com.concurso.sofkau.Usuario;
+import com.concurso.sofkau.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -15,13 +13,14 @@ import java.util.Scanner;
  * @author DIDIER JAVIER
  */
 public class UIMenu {
+
     public static void verMenu() {
         System.out.println("Bienvenido al concurso de preguntas y respuestas");
         System.out.println("El juego consta de cinco rondas; una pregunta en cada ronda");
         System.out.println("Te puedes retirar cuando quieras y quedas con los puntos acumulados");
         System.out.println("Si continuas y pierdes, tambien pierdes todos los puntos\n");
         System.out.println("Selecciona una opcion valida");
-        String respuesta = "0";
+        String respuesta;
         do {
             System.out.println("1. Empezar");
             System.out.println("2. Salir");
@@ -30,17 +29,16 @@ public class UIMenu {
             respuesta = sc.nextLine();
 
             switch (respuesta) {
-                case "1":
+                case "1" -> {
                     respuesta = "1";
                     ingresarUsuario();
-                    break;
-                case "2":
+                }
+                case "2" -> {
                     System.out.println("Hasta la proxima ocasion");
                     salir(Usuario.getPuntos());
                     System.exit(0);
-                    break;
-                default:
-                    System.out.println("Selecciona una opcion valida");
+                }
+                default -> System.out.println("Selecciona una opcion valida");
             }
         } while (!"1".equals(respuesta));
     }
@@ -64,18 +62,16 @@ public class UIMenu {
             System.out.println("Digite otra letra si desea retirarse");
             Scanner sc = new Scanner(System.in);
             respuesta = sc.nextLine().toUpperCase();
-            //int puntos = Usuario.getPuntos();
             switch (respuesta) {
                 case "A", "B", "C", "D" -> {
                     opcionValida = respuesta;
-                    
+
                     respuesta = "E";
                 }
                 default -> {
-                    //respuesta = "E";
                     System.out.println("\nHasta la proxima ocasion\n");
                     if (Usuario.getPuntos() == 1) {
-                            Usuario.setPuntos(0);
+                        Usuario.setPuntos(0);
                     }
                     salir(Usuario.getPuntos());
                     System.exit(0);
@@ -88,18 +84,16 @@ public class UIMenu {
 
     // public static void verificarEleccion(Categoria categoriaDeLista) {
     public static void verificarEleccion(ArrayList<Categoria> categorias) {
-
         for (int i = 0; i < 5; i++) {
             Categoria categoriaDeLista = categorias.get(i);
             //System.out.println("Tipo de categoria= " + categoriaDeLista);
 
             int idPreguntaAleatoria = categoriaDeLista.mostrarPreguntasPorCategoria();
-            System.out.println("Este es el id de categoría1: " + categoriaDeLista.getIdCategoria());
+            System.out.println("Este es el id de categoría: " + categoriaDeLista.getIdCategoria());
             System.out.println(categoriaDeLista.getPosiblesPreguntas().get(idPreguntaAleatoria));
             Pregunta guardarPregunta = categoriaDeLista.getPosiblesPreguntas().get(idPreguntaAleatoria);
 
             String opcionValida = continuar();
-            System.out.println("opcionValida = " + opcionValida);
             int j = 0;
             switch (opcionValida) {
                 case "A" ->

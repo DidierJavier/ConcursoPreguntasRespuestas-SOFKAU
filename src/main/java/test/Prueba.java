@@ -399,41 +399,8 @@ public class Prueba {
         categorias.add(categoria3);
         categorias.add(categoria4);
         categorias.add(categoria5);
-        //verificarEleccion(categorias.);
-
-        //for (int i = 0; i < categorias.size(); i++) {
-            //Categoria categoriaDeLista = categorias.get(i);
-            verificarEleccion(categorias);
-        //}
-//            Categoria categoriaDeLista = categorias.get(i);
-//            System.out.println("Tipo de categoria= " + categoriaDeLista);
-//
-//            int idPreguntaAleatoria = categoriaDeLista.mostrarPreguntasPorCategoria();
-//            System.out.println("Este es el id de categoría1: " + categoriaDeLista.getIdCategoria());
-//            System.out.println(categoriaDeLista.getPosiblesPreguntas().get(idPreguntaAleatoria));
-//            Pregunta guardarPregunta = categoriaDeLista.getPosiblesPreguntas().get(idPreguntaAleatoria);
-//
-//            String opcionValida = continuar();
-//            System.out.println("opcionValida = " + opcionValida);
-//            int j = 0;
-//            switch (opcionValida) {
-//                case "A" ->
-//                    j = 0;
-//                case "B" ->
-//                    j = 1;
-//                case "C" ->
-//                    j = 2;
-//                case "D" ->
-//                    j = 3;
-//            }
-//
-//            System.out.println("guardarPregunta = " + guardarPregunta.getPosiblesRespuestas().get(j).getAcierto());
-//            if (guardarPregunta.getPosiblesRespuestas().get(j).getAcierto()) {
-//                System.out.println("Felicidades");
-//            }
-//
-//        }
-
+        
+        verificarEleccion(categorias);
        
     }
 
