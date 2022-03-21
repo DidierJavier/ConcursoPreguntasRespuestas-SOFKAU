@@ -11,7 +11,7 @@ import java.util.*;
  * @author DIDIER JAVIER
  */
 public class Categoria {
-
+//Atributos de la clase categoria
     ArrayList<Pregunta> posiblesPreguntas;
     private static final int MAX_POSIBLES_PREGUNTAS = 5;
     private int contadorPreguntas;
@@ -22,7 +22,7 @@ public class Categoria {
         this.posiblesPreguntas = new ArrayList<>();
         this.idCategoria = ++Categoria.contadorCategorias;
     }
-
+//Métodos get y set
     public static int getContadorCategorias() {
         return contadorCategorias;
     }
@@ -42,7 +42,7 @@ public class Categoria {
     public int getContadorPreguntas() {
         return contadorPreguntas;
     }
-
+//Método para agregar las preguntas al ArrayList posibles preguntas, que es un atributo de la clase
     public void agregarPregunta(Pregunta pregunta) {
         if (this.contadorPreguntas >= Categoria.MAX_POSIBLES_PREGUNTAS) {
             System.out.println("");
@@ -52,7 +52,7 @@ public class Categoria {
         }
 
     }
-
+//Método para mostrar las preguntas de acuerdo a la categoría y de forma aleatoria
     public int mostrarPreguntasPorCategoria() {
         System.out.println();
         Random random = new Random();

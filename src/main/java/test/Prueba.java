@@ -391,15 +391,15 @@ public class Prueba {
         categoria5.agregarPregunta(pregunta4_ronda5);
         categoria5.agregarPregunta(pregunta5_ronda5);
 
-        verMenu();
-
+        verMenu();//Menú inicial donde se indica al usuario el funcionamiento del juego y si desea continuar o salir
+//Se crea un ArrayList para guardar las categorias de las preguntas
         ArrayList<Categoria> categorias = new ArrayList();
         categorias.add(categoria1);
         categorias.add(categoria2);
         categorias.add(categoria3);
         categorias.add(categoria4);
         categorias.add(categoria5);
-        
+        //Método donde se verifica la eleccion de la respuesta que ha dado el usuario (A, B, C o D)
         verificarEleccion(categorias);
        
     }

@@ -13,7 +13,7 @@ import java.util.Scanner;
  * @author DIDIER JAVIER
  */
 public class UIMenu {
-
+//Menú inicial donde se explica el funcionamiento del juego y se da la opción de continuar o salir
     public static void verMenu() {
         System.out.println("Bienvenido al concurso de preguntas y respuestas");
         System.out.println("El juego consta de cinco rondas; una pregunta en cada ronda");
@@ -42,7 +42,8 @@ public class UIMenu {
             }
         } while (!"1".equals(respuesta));
     }
-
+    
+//Método para ingresar un nombre de usuario de al menos 7 letras
     private static void ingresarUsuario() {
         Usuario usuario = new Usuario("");
         int nombreLengthSinEspacios;
@@ -54,6 +55,7 @@ public class UIMenu {
         } while (nombreLengthSinEspacios < 7);
     }
 
+    //Método para darle al usuario la opción de retirarse o continuar respondiendo
     public static String continuar() {
         String opcionValida = null;
         String respuesta;
@@ -82,7 +84,7 @@ public class UIMenu {
 
     }
 
-    // public static void verificarEleccion(Categoria categoriaDeLista) {
+    //Método para validar si el usuario a acertado o no a la respuesta y se asignan las puntuaciones
     public static void verificarEleccion(ArrayList<Categoria> categorias) {
         for (int i = 0; i < 5; i++) {
             Categoria categoriaDeLista = categorias.get(i);
@@ -124,6 +126,7 @@ public class UIMenu {
         }
     }
 
+    //Método para finalizar el programa, mostrando antes el puntaje
     public static void salir(int puntos) {
         System.out.println("Quedaste con " + puntos + " puntos");
         System.out.println("Fin del juego");

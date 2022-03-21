@@ -10,17 +10,17 @@ import java.util.*;
  * @author DIDIER JAVIER
  */
 public class Pregunta {
-
+//Atributos de la clase Pregunta
     private String pregunta;
     private ArrayList<Respuesta> posiblesRespuestas;
     private static final int MAX_POSIBLES_RESPUESTAS = 4;
     private Integer contadorRespuestas = 0;
-
+//Constructor de la clase
     public Pregunta(String pregunta) {
         this.pregunta = pregunta;
         this.posiblesRespuestas = new ArrayList<>();
     }
-
+//Métodos get y set
     public String getPregunta() {
         return pregunta;
     }
@@ -44,7 +44,7 @@ public class Pregunta {
     public void setContadorRespuestas(Integer contadorRespuestas) {
         this.contadorRespuestas = contadorRespuestas;
     }
-
+//Método para agregar las respuestas al atributo ArrayList posibles respuestas
     public void agregarRespuesta(Respuesta respuesta) {
         if (this.contadorRespuestas >= Pregunta.MAX_POSIBLES_RESPUESTAS) {
             System.out.println("");

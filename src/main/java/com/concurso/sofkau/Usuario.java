@@ -8,15 +8,17 @@ package com.concurso.sofkau;
  *
  * @author DIDIER JAVIER
  */
-public class Usuario {
+public class Usuario {//Atributos de la clase
     private String nombre;
     private static int puntos;
     
+    //Constructor de la clase
     public Usuario(String nombre) {
         this.nombre = nombre;
         Usuario.puntos = 1;
     }
 
+    //Métodos get y set
     public static int getPuntos() {
         return puntos;
     }

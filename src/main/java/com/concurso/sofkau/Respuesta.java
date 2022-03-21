@@ -8,17 +8,19 @@ package com.concurso.sofkau;
  *
  * @author DIDIER JAVIER
  */
-public class Respuesta {
+public class Respuesta {//Atributos para crear objetos tipo preguntaa
     private final String respuesta;
     private final String caracter;
     private final Boolean acierto;
-
+    
+//Constructor de la clase
     public Respuesta(String respuesta, String caracter, Boolean acierto) {
         this.respuesta = respuesta;
         this.caracter = caracter;
         this.acierto = acierto;
     }
-
+    
+//Métodos get. No son necesarios los métodos set
     public String getRespuesta() {
         return respuesta;
     }
@@ -30,7 +32,7 @@ public class Respuesta {
     public Boolean getAcierto() {
         return acierto;
     }   
-    
+    //Método toString
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
