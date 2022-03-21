@@ -9,9 +9,9 @@ package com.concurso.sofkau;
  * @author DIDIER JAVIER
  */
 public class Respuesta {
-    private String respuesta;
-    private String caracter;
-    private Boolean acierto;
+    private final String respuesta;
+    private final String caracter;
+    private final Boolean acierto;
 
     public Respuesta(String respuesta, String caracter, Boolean acierto) {
         this.respuesta = respuesta;
